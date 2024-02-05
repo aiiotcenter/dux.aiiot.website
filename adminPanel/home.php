@@ -76,12 +76,12 @@
      
 
     <div class="right-nav"  onclick="goToLink('#Profile-settings')">
-       <!-- <a href="https://www.dux.aiiot.website/home.php" > -->
-    <a href="http://localhost/home.php" class="icon-container">
+<a href="https://www.dux.aiiot.website/adminPanel/home.php" class="icon-container">
         <div class="switch-icon">
           <img class="switch-icon" src="../assets/images-2.png" ></div>
-        <div class="tooltip">Switch To Student View</div>
+        <div class="tooltip">Switch To Teacher View</div>
     </a>
+
 
       <p class="text-primary notranslate" id="userName"></p>
       <img src="" alt="User Profile Image" class="user-avatar" id="userPhoto"> 
