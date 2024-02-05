@@ -68,12 +68,21 @@
       <img class="open-menu icon" src="../assets/icons/fi-rr-grip-lines.svg" alt="">
       <img class="close-menu icon" src="../assets/icons/fi-rr-cross.svg" alt="">
     </div>
-
     <div class="top-logo">
       <img src="assets/RCAIoT_logo.png" alt="Company Logo">
     </div>
 
+
+     
+
     <div class="right-nav"  onclick="goToLink('#Profile-settings')">
+       <!-- <a href="https://www.dux.aiiot.website/home.php" > -->
+    <a href="http://localhost/home.php" class="icon-container">
+        <div class="switch-icon">
+          <img class="switch-icon" src="../assets/images-2.png" ></div>
+        <div class="tooltip">Switch To Student View</div>
+    </a>
+
       <p class="text-primary notranslate" id="userName"></p>
       <img src="" alt="User Profile Image" class="user-avatar" id="userPhoto"> 
       <div class="logout-icon two-column-grid" onclick="logoutDialog()">
