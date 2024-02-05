@@ -5,23 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/home/old-styles.css?15">
+  <link rel="stylesheet" href="assets/css/home/index.css?14">
+  <link rel="stylesheet" href="assets/css/home/header.css?14">
+  <link rel="stylesheet" href="assets/css/home/main.css?14">
+  <link rel="stylesheet" href="assets/css/home/sidenavigation.css?13">
+  <link rel="stylesheet" href="assets/css/home/tab-card.css?13">
+  <link rel="stylesheet" href="assets/css/home/chat.css?13">
+  <link rel="stylesheet" href="assets/css/home/grade-cards.css?13">
+  <link rel="stylesheet" href="assets/css/home/footer.css?13">
+  <link rel="stylesheet" href="assets/css/qs.css">
+  <link rel="stylesheet" href="assets/css/dialogs.css">
+  <link rel="stylesheet" href="assets/css/translation.css">
+  <!-- <script src="assets/js/home/initGoogleTranslate.js" defer></script> -->
+
+  <script src="assets/js/sidebar.js?14" defer></script>
+  <script src="assets/js/dialogs.js?2"></script>
+  <script src="assets/js/functions.js?4"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scripts.js?7" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> -->
-  <!-- <script src="assets/js/talk.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-
-  <!-- Add your custom css files and js files in admin-dynamic-imports.php  -->
-  <?php include 'includes/student-dynamic-imports.php' ?>
-
      <!-- <script>
 
     var message = "Not alowed!!";
@@ -56,22 +61,14 @@
     </div>
 
     <div class="right-nav">
- <a href="https://www.dux.aiiot.website/adminPanel/home.php" > 
-       
+ <a href="https://www.dux.aiiot.website/adminPanel/home.php" class="icon-container"> 
+        class="icon-container">
         <div class="switch-icon">
           <img class="switch-icon" src="assets/images-2.png" ></div>
         <div class="tooltip">Switch To Teacher View</div>
     </a>
-  <script>
-  
-    const userData = JSON.parse(sessionStorage.getItem('user'));
-    const iconContainer = document.querySelector('.icon-container');
-    if (userData && userData.utype === "student") {
-        iconContainer.style.display = "none";
-    } else {
-        iconContainer.style.display = "block";
-    }
-</script>
+ 
+
       <p id="userName" class="locked-text"></p>
       <img src="" alt="User Profile Image" class="user-avatar" id="userPhoto">
       <div class="logout-icon two-column-grid" onclick="logoutDialog()">
@@ -81,7 +78,16 @@
     </div>
 
   </header>
+<script>
 
+    const userData = JSON.parse(sessionStorage.getItem('user'));
+    const iconContainer = document.querySelector('.icon-container');
+    if (userData && userData.utype === "student") {
+        iconContainer.style.display = "none";
+    } else {
+        iconContainer.style.display = "block";
+    }
+</script>
   <!-- 
   <script>
 
@@ -152,7 +158,7 @@
 
       <a class="nav-item nav-link" data-tab="timetable" href="#">
         <img class="icon" src="assets/icons/fi-rr-calendar.svg">
-        <p class="locked-text" data-en="Timetable" data-tr="Ders Programı"></p>
+        <p>Timetable</p>
       </a>
 
       <a class="nav-item nav-link" data-tab="messages" href="#">
@@ -234,8 +240,7 @@
               </div>
             </div>
 
-            <button class="set-button" id="set-button"><i class="fas fa-cog"></i> 
-            <p class="locked-text" data-en="Set" data-tr="Ayarla"></p></button>
+            <button class="set-button" id="set-button"><i class="fas fa-cog"></i> Set</button>
           </div>
 
           <div class="timer-section">
@@ -281,10 +286,7 @@
             placeholder="Type your message, then press Shift + Enter"></textarea>
 
           <!-- <i class="fas fa-paper-plane" style="color:blue"></i> -->
-          <button id="sendIcon" 
-                class="locked-text"
-                data-en="Send"
-                data-tr="Gönder"></button>
+          <button id="sendIcon">send</button>
 
         </div>
       </div>
@@ -381,10 +383,7 @@
         </div>
         <div class="send-chatroom-message-box">
           <textarea id="chatroom-message-textarea" placeholder="Type your message and press Enter"></textarea>
-          <button onclick="sendMessageTriggered()" 
-                class="locked-text"
-                data-en="Send"
-                data-tr="Gönder"></button>
+          <button onclick="sendMessageTriggered()">send</button>
         </div>
       </div>
     </div>
@@ -450,10 +449,7 @@
                 </div>
               </div>
 
-              <button class="set-button btn btn-primary locked-text" id="grades-button"
-              data-en="Show"
-              data-tr="Göster"
-              ></button>
+              <button class="set-button btn btn-primary" id="grades-button">Show</button>
             </div>
 
 
@@ -521,12 +517,7 @@
 
               <!-- <div class="column"> -->
               <!-- <div> -->
-              <button class="set-button btn btn-primary locked-text" 
-              data-en="Show"
-              data-tr="Göster"
-              id="semester-grades-button">
-
-              </button>
+              <button class="set-button btn btn-primary" id="semester-grades-button">Show</button>
               <!-- </div> -->
               <!-- </div> -->
 
@@ -606,7 +597,7 @@
       <!-- Content for Timetable tab -->
 
       <div class="my-timetable">
-        <h2 class="tab-title locked-text" data-en="Timetable" data-tr="Ders Programı"></h2>
+        <h2 class="tab-title">Timetable</h2>
 
         <div class="button-group" role="group">
           <button type="button" class="btn btn-secondary" id="week-btn">This Week</button>
@@ -670,10 +661,7 @@
 
               <div class="buttonsM">
                 <button type="button" class="cancel-btn" onclick="cancelCreateMessage()">Cancel</button>
-                <button type="button" onclick="sendMessageB()" 
-                class="locked-text"
-                data-en="Send"
-                data-tr="Gönder"></button>
+                <button type="button" onclick="sendMessageB()">Send</button>
               </div>
             </form>
           </div>
@@ -769,45 +757,14 @@
           <form id="api-key-form">
             <label for="api-key-input">Register/Update Your API Key:</label>
             <input type="text" class="form-control" id="api-key-input" required>
-            <button type="submit" class="btn btn-primary locked-text"
-            data-en="Save"
-            data-tr="Kaydet"
-            ></button>
+            <button type="submit" class="btn btn-primary">Save</button>
           </form>
 
           <div class="api-key-link">
             Don't have a key yet? <a href="https://platform.openai.com" target="_blank" id="get-api-key-link">Find
               out how to get one</a>
           </div>
-
-<div class="tab-contents" id="profile-settings" data-tab="Profile-settings-link">
-       <h1 class="tab-title">Profile Settings</h1>
-  <div class="profile-container">
-   <div class="profile-picture">
-  <img id="userPhotos" src="" alt="User Photo">
-  <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)">
-  <button class="editt-photo-btn" onclick="document.getElementById('fileInput').click();">&#9998;</button>
-</div>
-     <div class="profile-fields">
-    <input type="text" placeholder="Name" id="name">
-    <input type="text" placeholder="Student No" id="studentno" readonly>
-    <input type="text" placeholder="Email" id="email" readonly>
-    <input type="text" placeholder="Phone No" id="phone">
-    <input type="text" placeholder="Address" id="address">
-
-     </div>
-
-            
-            <div class="profile-footer">
-<button class="save-btn locked-text" onClick="edituserprofile()" id="editButton" data-en="Save" data-tr="Kaydet"></button>
-
-
-
-            </div>
         </div>
-    </div>
-        </div>
-        
       </div>
       
       
@@ -830,37 +787,8 @@
     </div> 
 
     
-<div class="tab-contents" id="profile-settings" data-tab="Profile-settings-link">
-       <h1 class="tab-title">Profile Settings</h1>
-<div class="profile-container">
-   <div class="profile-picture">
-  <img id="userPhotos" src="" alt="User Photo">
-  <input type="file" id="fileInput" accept="image/*" onchange="loadFile(event)">
-  <button class="editt-photo-btn" onclick="document.getElementById('fileInput').click();">&#9998;</button>
-</div>
-     <div class="profile-fields">
-    <input type="text" placeholder="Name" id="name">
-    <input type="text" placeholder="Student No" id="studentno" readonly>
-    <input type="text" placeholder="Email" id="email" readonly>
-    <input type="text" placeholder="Phone No" id="phone">
-    <input type="text" placeholder="Address" id="address">
 
-     </div>
-
-            
-            <div class="profile-footer">
-<button class="save-btn locked-text" onClick="edituserprofile()" id="editButton" data-en="Save" data-tr="Kaydet"></button>
-
-
-
-            </div>
-        </div>
-    </div>
-        </div>
-</body>
-
-</html>
-
+      
 
 
   <!--<footer>-->
@@ -914,6 +842,19 @@
   <!--  </div>-->
 
   <!--</footer>-->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> -->
+  <!-- <script src="assets/js/talk.js"></script> -->
+  <script src="assets/js/qs.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+
+
 
   <script>
     // Function to send chat message to the server
@@ -1309,7 +1250,6 @@
 
 
       function validateSessionToken(token) {
-      
     $.ajax({
         url: '../api/api.php',
         type: 'POST',
@@ -1334,7 +1274,7 @@
 
 // Get the session token from sessionStorage
 const sessionToken = JSON.parse(sessionStorage.getItem('user')).token;
-// validateSessionToken(sessionToken); // TODO:
+validateSessionToken(sessionToken);
 
     });
 
@@ -1356,13 +1296,13 @@ const sessionToken = JSON.parse(sessionStorage.getItem('user')).token;
         },
         success: function (response) {
           // Redirect to index.html after successful logout
-          window.location.href = 'auth.html';
+          window.location.href = '../auth.html';
         },
         error: function (xhr, status, error) {
           // Handle error if necessary
           console.error(error);
           // Redirect to index.html regardless of the API call result
-          window.location.href = 'auth.html';
+          window.location.href = '../auth.html';
         }
       });
     }
@@ -1448,10 +1388,14 @@ const sessionToken = JSON.parse(sessionStorage.getItem('user')).token;
     const userDataa = sessionStorage.getItem('user');
     // If user data is not present, redirect to index.html
     if (!userDataa) {
-      window.location.href = 'index.html';
+      window.location.href = '../auth.html';
     } else {
       const user = JSON.parse(sessionStorage.getItem('user'));
-      setUsernameDetails(user);
+      document.querySelectorAll('#userName').forEach(item => {
+        item.setAttribute('data-en', user.name);
+        item.setAttribute('data-tr', user.name);
+      })
+      document.querySelectorAll('#userPhoto').forEach(item => item.src = user.photo)
     }
   </script>
 
@@ -1791,10 +1735,8 @@ const sessionToken = JSON.parse(sessionStorage.getItem('user')).token;
         
           // }
 
-          const tid = topicId;
-          
-          console.log("tid:",tid);
-if (tid === 'Mid Term Exam' || tid === 'Final Exam') {
+          const tid = topicId;// sessionStorage.getItem('topicToLearn'); // Save selected topic to sessionStorage
+if (tid === 'Mid Term Exam' || tid=== 'Final Exam') {
   const examDiv = document.getElementById('myExam');
   const imageDiv = document.getElementById('instructions-image-container')
   const instDiv = document.getElementById('instructions')
@@ -2461,3 +2403,6 @@ if (tid === 'Mid Term Exam' || tid === 'Final Exam') {
     });
   </script>
 
+</body>
+
+</html>
