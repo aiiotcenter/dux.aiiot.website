@@ -80,7 +80,7 @@
      white-space: nowrap;
      display: none;
  }
-
+/* jeries */
  a:hover .tooltip {
      display: block;
  }
