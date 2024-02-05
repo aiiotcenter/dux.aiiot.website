@@ -61,7 +61,7 @@
     </div>
 
     <div class="right-nav">
- <a href="https://www.dux.aiiot.website/adminPanel/home.php" class="icon-container"> 
+ <a href="adminPanel/home.php" class="icon-container"> 
       
         <div class="switch-icon">
           <img class="switch-icon" src="assets/images-2.png" ></div>
