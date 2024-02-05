@@ -76,7 +76,7 @@
      
 
     <div class="right-nav"  onclick="goToLink('#Profile-settings')">
-<a href="https://www.dux.aiiot.website/adminPanel/home.php" class="icon-container">
+<a href="https://www.dux.aiiot.website/home.php" class="icon-container">
         <div class="switch-icon">
           <img class="switch-icon" src="../assets/images-2.png" ></div>
         <div class="tooltip">Switch To Teacher View</div>
