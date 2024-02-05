@@ -76,8 +76,8 @@
      
 
     <div class="right-nav"  onclick="goToLink('#Profile-settings')">
-       <!-- <a href="https://www.dux.aiiot.website/home.php" > -->
-    <a href="http://localhost/home.php" class="icon-container">
+        <a href="https://www.dux.aiiot.website/home.php" > 
+   
         <div class="switch-icon">
           <img class="switch-icon" src="../assets/images-2.png" ></div>
         <div class="tooltip">Switch To Student View</div>

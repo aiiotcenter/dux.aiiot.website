@@ -56,12 +56,22 @@
     </div>
 
     <div class="right-nav">
- <!-- <a href="https://www.dux.aiiot.website/adminPanel/home.php" > -->
-       <a href="http://localhost/adminPanel/home.php" class="icon-container">
+ <a href="https://www.dux.aiiot.website/adminPanel/home.php" > 
+       
         <div class="switch-icon">
           <img class="switch-icon" src="assets/images-2.png" ></div>
         <div class="tooltip">Switch To Teacher View</div>
     </a>
+  <script>
+  
+    const userData = JSON.parse(sessionStorage.getItem('user'));
+    const iconContainer = document.querySelector('.icon-container');
+    if (userData && userData.utype === "student") {
+        iconContainer.style.display = "none";
+    } else {
+        iconContainer.style.display = "block";
+    }
+</script>
       <p id="userName" class="locked-text"></p>
       <img src="" alt="User Profile Image" class="user-avatar" id="userPhoto">
       <div class="logout-icon two-column-grid" onclick="logoutDialog()">
